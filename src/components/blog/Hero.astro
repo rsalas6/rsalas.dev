@@ -1,0 +1,48 @@
+---
+import BlogImage from "./Image.astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+	content: CollectionEntry<"post">;
+}
+
+const { content } = Astro.props;
+
+const datetime = content.data.publishDate.toISOString();
+// const postDate = getFormattedDate(content.data.publishDate, { month: "long" });
+const postDate = content.data.publishDate.toLocaleDateString("en", {
+  dateStyle: "full",
+});
+
+const author = content.data.author;
+---
+
+<header class="flex flex-col mb-4">
+	<div class="flex items-center justify-center w-full gap-3 font-display p-category mb-3">
+		{content.data.tags.map((tag) => (
+			<>
+				<a
+					aria-label={`View more blogs with the tag ${tag}`}
+					class="rounded-full py-1 px-3 uppercase text-xs bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-400 disabled"
+					href={`/tags/${tag}`}
+				>{tag}</a>
+			</>
+		))}
+	</div>
+	<time datetime={datetime} class="block text-center text-zinc-400 mb-2 text-sm sm:text-base">{postDate}</time>
+	<h1 class="text-2xl sm:text-4xl mb-2 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-green-200 via-green-500 to-green-900">
+		{content.data.title}
+	</h1>
+	<div class="inline-flex gap-2 justify-center items-center mb-2 text-center">
+		<p class="text-zinc-400 text-xs">
+			<span class="block font-semibold">By { author }</span>
+		</p>
+	</div>
+	<BlogImage
+		src={`/${content.data.image.src}`}
+		alt={content.data.image.alt}
+		loading="eager"
+		aspectRatio={1.91}
+    />
+	<p class="text-center italic text-sm my-3">{content.data.description}</p>
+</header>
