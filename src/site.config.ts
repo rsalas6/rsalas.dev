@@ -18,7 +18,7 @@ export const siteConfig: SiteConfig = {
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
 	title: "Roberto Salas • Software Engineering",
 	// Meta property used as a default description meta property
-	description: "Personal website of a software engineer with a focus on software engineering, data science, and cybersecurity. Explore my projects and thoughts on the latest tech trends.",
+	description: "Personal website of a software engineer with a focus on programming, data science, and cybersecurity. Explore my projects and thoughts on the latest tech trends.",
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: "en-US",
 	// Meta property, found in src/components/BaseHead.astro L:42
