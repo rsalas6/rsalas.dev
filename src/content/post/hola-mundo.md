@@ -6,7 +6,7 @@ tags: ["programming", "personal"]
 author: "Roberto Salas"
 image:
   src: "hola-mundo.png"
-  alt: "Logo of Astro, partytown and google analytics together"
+  alt: "My blog journey"
 ---
 Hello everyone! I'm excited to announce that I am starting my own programming blog. As a programmer, I am passionate about exploring various aspects of programming, including Data Science, DevOps, Cybersecurity, and more. My goal is to share my knowledge with others and help them learn more about these fascinating topics.
 
